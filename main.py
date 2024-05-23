@@ -17,7 +17,7 @@ display.set_caption("Ferma")
 # навантаження зображень
 img_back = "background.jpg"  # фон гри
 img_hero = "car-d.png"  # герой
-img_enemy = "crow.jpg"  # ворог
+img_enemy = "crow2.png"  # ворог
 
 # клас-батько для інших спрайтів
 class GameSprite(sprite.Sprite):
@@ -74,7 +74,7 @@ while True:
     # створення спрайтів
     ship = Player(img_hero, 5, win_height - 100, 80, 100, 10)
     monsters = sprite.Group()
-    for i in range(1, 20):  # Зменшуємо кількість ворогів для більшої розміркованості
+    for i in range(1, 16):  # Зменшуємо кількість ворогів для більшої розміркованості
         monster = Enemy(img_enemy, randint(80, win_width - 80), -40, 90, 90, randint(1, 3))  # Зменшуємо максимальну швидкість
         monsters.add(monster)
 
