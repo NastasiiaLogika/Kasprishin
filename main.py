@@ -16,7 +16,7 @@ display.set_caption("Ferma")
 
 # навантаження зображень
 img_back = "background.jpg"  # фон гри
-img_hero = "car-d.png"  # герой
+img_hero = "women-r.png"  # герой
 img_enemy = "crow2.png"  # ворог
 
 # клас-батько для інших спрайтів
@@ -72,7 +72,7 @@ while True:
     background = transform.scale(image.load(img_back), (win_width, win_height))
 
     # створення спрайтів
-    ship = Player(img_hero, 5, win_height - 100, 80, 100, 10)
+    ship = Player(img_hero, 5, win_height - 100, 80, 120, 40)
     monsters = sprite.Group()
     for i in range(1, 16):  # Зменшуємо кількість ворогів для більшої розміркованості
         monster = Enemy(img_enemy, randint(80, win_width - 80), -40, 90, 90, randint(1, 3))  # Зменшуємо максимальну швидкість
@@ -108,7 +108,7 @@ while True:
                     break
                 else:
                     # Перевірка програшу
-                    if Enemy.collisions < 10 and time.get_ticks() - start_time >= duration:
+                    if Enemy.collisions < 10 and time.get_ticks() - start_time == 0.5:
                         finish_game("Game Over")
                         finish = True
                         break
